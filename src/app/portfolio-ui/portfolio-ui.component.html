@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
+  </head>
+  <body>
+   
+    <div>
+      <header>
+        <h2> Portfolio Management</h2>
+      </header>
+      <table class="table styled-table">
+        <thead>
+          <tr ngclass="btn-primary">
+            <th scope="col" class="tbl2">Symbol</th>
+            <th class="tbl2">Number Of Shares</th>
+            <th class="tbl2">Percentage</th>
+            <th class="tbl2">Existing Shares</th>
+            <th class="tbl2">Number Of Shares To Buy</th>
+            <th class="tbl2">Number Of Shares To Sell</th>
+            <th class="tb12">Total Shares </th>
+            <th class="tb12">Today Open </th>
+            <th class="tb12">Yesterday closed </th>
+            <th class="tb12">Existing Allocation Percentage</th>
+            <th class="tb12">Indicator </th>
+          </tr>
+        </thead>
+        <tr *ngFor="let portfolio of portfolios">
+          <td class="tbl2"><img src = "src/assets/ABB.png">{{portfolio.symbol}}</td>
+          <td class="tbl2">{{portfolio.numberOfShares}}</td>
+          <td class="tbl2">{{portfolio.percentage}}</td>
+          <td class="tbl2">{{portfolio.existingShares}}</td>
+          <td class="tbl2">{{portfolio.numberOfShareToBuy}}</td>
+          <td class="tbl2">{{portfolio.numberOfShareToSell}}</td>
+          <td class="tbl2">{{portfolio.totalShares}}</td>
+          <td class="tbl2">{{portfolio.todayOpenPrice}}</td>
+          <td class="tbl2">{{portfolio.yesterdayClosePrice}}</td>
+          <td class="tbl2">{{portfolio.existingAllocationPercentage}}</td>
+         
+          <!-- <td style="background-color: #009879" *ngIf="portfolio.todayOpenPrice > portfolio.yesterdayClosePrice"><i
+                class="fas fa-arrow-up "></i>{{portfolio.percentageDifferenceOfOpenandClosedPrice}}</td>
+          <td style="background-color: #ad1818" *ngIf="portfolio.todayOpenPrice < portfolio.yesterdayClosePrice"> <i
+                class="fas fa-arrow-down"></i> {{portfolio.percentageDifferenceOfOpenandClosedPrice}}</td>
+          <td style="background-color: rgb(125, 52, 194)" *ngIf="portfolio.todayOpenPrice == portfolio.yesterdayClosePrice"> <i
+                class="fas fa-equals"></i>{{portfolio.percentageDifferenceOfOpenandClosedPrice}}</td> -->
+        
+            <td style="background-color: #81C995" *ngIf="portfolio.todayOpenPrice > portfolio.yesterdayClosePrice"><i
+              class="fas fa-arrow-up"></i>{{portfolio.percentageDifferenceOfOpenandClosedPrice}}</td>
+            <td style="background-color: #F28B82" *ngIf="portfolio.todayOpenPrice < portfolio.yesterdayClosePrice"> <i
+              class="fas fa-arrow-down"></i> {{portfolio.percentageDifferenceOfOpenandClosedPrice}}</td>
+            <td style="background-color: #9AA0A6" *ngIf="portfolio.todayOpenPrice == portfolio.yesterdayClosePrice"> <i
+              class="fas fa-equals"></i>{{portfolio.percentageDifferenceOfOpenandClosedPrice}}</td>
+       
+        </tr>
+      </table>
+    </div>
+    
+  </body>
+</html>
